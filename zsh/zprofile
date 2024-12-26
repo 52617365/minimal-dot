@@ -1,0 +1,19 @@
+
+
+export PATH="$PATH:/Users/rase/Library/Application Support/JetBrains/Toolbox/scripts"
+
+export PATH="$PATH:/Users/rase/go/bin"
+
+export PATH="$PATH:/Users/rase/.config/nvim/minimal_nvim/scripts"
+
+alias ac='source /Users/rase/.zprofile; source /Users/rase/.zshrc'
+
+alias dev='cd /Users/rase/dev'
+
+alias tori_scraper='cd /Users/rase/dev/tori_scraper'
+
+alias tori_backend='cd /Users/rase/dev/toripro'
+
+alias tori_frontend='cd /Users/rase/dev/tori_ui_next'
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
