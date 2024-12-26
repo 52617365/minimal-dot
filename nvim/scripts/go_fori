@@ -1,0 +1,7 @@
+fori=`cat <<EOF
+for i := 0; i < x; i++ {
+}
+EOF
+`
+
+echo $fori
