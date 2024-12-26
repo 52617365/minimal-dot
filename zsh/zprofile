@@ -6,6 +6,7 @@ export PATH="$PATH:/Users/rase/go/bin"
 
 export PATH="$PATH:/Users/rase/.config/nvim/minimal_nvim/scripts"
 
+alias vim='nvim'
 alias ac='source /Users/rase/.zprofile; source /Users/rase/.zshrc'
 
 alias dev='cd /Users/rase/dev'
@@ -15,5 +16,9 @@ alias tori_scraper='cd /Users/rase/dev/tori_scraper'
 alias tori_backend='cd /Users/rase/dev/toripro'
 
 alias tori_frontend='cd /Users/rase/dev/tori_ui_next'
+
+alias dot='cd /Users/rase/.config/dotfiles'
+
+alias todo='echo "----------------------" >> /Users/rase/TODO; date >> /Users/rase/TODO; echo "- " >> /Users/rase/TODO; echo "----------------------" >> /Users/rase/TODO; nvim "+call cursor(3,3)" /Users/rase/TODO'
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
