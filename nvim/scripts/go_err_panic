@@ -1,0 +1,8 @@
+err_nil_check=`cat <<EOF
+if err != nil {
+  panic(err)
+}
+EOF
+`
+
+echo $err_nil_check
