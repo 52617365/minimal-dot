@@ -126,6 +126,8 @@ vim.keymap.set('n', '<leader>g', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>s', builtin.grep_string, {})
 vim.keymap.set('n', '<leader>d', builtin.diagnostics, {})
 
+vim.keymap.set("n", "<leader>e", function() if (vim.api.nvim_buf_get_option(0, "filetype")=="netrw") then vim.api.nvim_exec(":bprev", false) else vim.api.nvim_exec(":Explore", false) end end, {})
+
 require('hop')
 vim.keymap.set('n', '<leader>h', ":HopWord<CR>", { silent = true })
 
