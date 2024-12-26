@@ -7,7 +7,7 @@ export PATH="$PATH:/Users/rase/go/bin"
 export PATH="$PATH:/Users/rase/.config/nvim/minimal_nvim/scripts"
 
 alias vim='nvim'
-alias ac='source /Users/rase/.zprofile; source /Users/rase/.zshrc'
+alias ac='source /Users/rase/.zprofile; source /Users/rase/.zshrc; tmux source ~/.tmux.conf'
 
 alias dev='cd /Users/rase/dev'
 
