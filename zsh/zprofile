@@ -4,7 +4,7 @@ export PATH="$PATH:/Users/rase/Library/Application Support/JetBrains/Toolbox/scr
 
 export PATH="$PATH:/Users/rase/go/bin"
 
-export PATH="$PATH:/Users/rase/.config/nvim/minimal_nvim/scripts"
+export PATH="$PATH:/Users/rase/.config/dotfiles/nvim/scripts"
 
 alias vim='nvim'
 alias ac='source /Users/rase/.zprofile; source /Users/rase/.zshrc; tmux source ~/.tmux.conf'
@@ -19,6 +19,6 @@ alias tori_frontend='cd /Users/rase/dev/tori_ui_next'
 
 alias dot='cd /Users/rase/.config/dotfiles'
 
-alias todo='echo "----------------------" >> /Users/rase/TODO; date >> /Users/rase/TODO; echo "- " >> /Users/rase/TODO; echo "----------------------" >> /Users/rase/TODO; nvim "+call cursor(3,3)" /Users/rase/TODO'
+alias todo='/Users/rase/.config/dotfiles/zsh/todo.sh'
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
