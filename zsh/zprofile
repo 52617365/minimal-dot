@@ -21,4 +21,6 @@ alias dot='cd /Users/rase/.config/dotfiles'
 
 alias todo='/Users/rase/.config/dotfiles/zsh/todo.sh'
 
+alias view='nvim -R'
+
 eval "$(/opt/homebrew/bin/brew shellenv)"
