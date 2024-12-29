@@ -1,0 +1,7 @@
+forr=`cat <<EOF
+for _, e := range thingy {
+}
+EOF
+`
+
+echo $forr

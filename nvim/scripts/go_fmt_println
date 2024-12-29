@@ -1,0 +1,6 @@
+fmt_println=`cat <<EOF
+  fmt.Println()
+EOF
+`
+
+echo $fmt_println
