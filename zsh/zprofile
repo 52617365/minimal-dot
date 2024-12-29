@@ -17,10 +17,16 @@ alias tori_backend='cd /Users/rase/dev/toripro'
 
 alias tori_frontend='cd /Users/rase/dev/tori_ui_next'
 
+alias scrapelite='cd /Users/rase/dev/scrapelite'
+
 alias dot='cd /Users/rase/.config/dotfiles'
 
 alias todo='/Users/rase/.config/dotfiles/zsh/todo.sh'
 
 alias view='nvim -R'
+
+alias godoc='/usr/local/go/src'
+
+alias golib='~/go/pkg/mod/github.com'
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
