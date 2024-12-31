@@ -1,0 +1,12 @@
+#!/bin/bash
+
+WIDTH=80
+separator=$(printf '%*s' "$WIDTH" | tr ' ' '=')
+
+# Read from stdin
+text=$(cat)
+
+# Print formatted output
+echo "/*$separator"
+printf "   %s\n" "$text"
+echo "$separator*/"
