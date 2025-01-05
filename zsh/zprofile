@@ -29,4 +29,9 @@ alias godoc='/usr/local/go/src'
 
 alias golib='~/go/pkg/mod/github.com'
 
+alias links='vim ~/links.md'
+
+# case insensitive grepping
+alias g='rg -i'
+
 eval "$(/opt/homebrew/bin/brew shellenv)"

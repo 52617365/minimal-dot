@@ -21,30 +21,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 plugins = {
-  {'nvim-telescope/telescope.nvim', dependencies = { 'nvim-lua/plenary.nvim' }},
-  {'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-  {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+ {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
   {"numToStr/Comment.nvim"},
   {"neovim/nvim-lspconfig"},
   {"EdenEast/nightfox.nvim"},
-  {
-    'smoka7/hop.nvim',
-    version = "*",
-    opts = {
-        keys = 'etovxqpdygfblzhckisuran'
-    }
-  },
-  {'tpope/vim-fugitive'},
-  {'kylechui/nvim-surround', version = "*"},
-  {
-    "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-  },
-  M,
 }
-
--- Auto formatting and go imports when saving with *.go files using ray-x/go.nvim
-local format_sync_grp = vim.api.nvim_create_augroup("goimports", {})
 
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
@@ -82,54 +63,9 @@ for _, diag in ipairs({ "Error", "Warn", "Info", "Hint" }) do
 end
 
 require("lazy").setup(plugins)
-require('telescope').setup{
-  pickers = {
-    find_files = {
-      theme = "ivy",
-      layout_config = {
-        height = 0.5,
-      },
-    },
-    live_grep = {
-      theme = "ivy",
-      layout_config = {
-        height = 0.5,
-      },
-    },
-    grep_string = {
-      theme = "ivy",
-      layout_config = {
-        height = 0.5,
-      },
-    },
-    diagnostics = {
-      theme = "ivy",
-      layout_config = {
-        height = 0.5,
-      },
-    },
-  },
-  extensions = {
-    fzf = {
-      override_generic_sorter = true,  -- override the generic sorter
-      override_file_sorter = true,     -- override the file sorter
-    }
-  }
-}
-require('nvim-surround').setup({})
 
-
-local builtin = require('telescope.builtin')
-
-vim.keymap.set('n', '<leader>f', builtin.find_files, {})
-vim.keymap.set('n', '<leader>g', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>s', builtin.grep_string, {})
-vim.keymap.set('n', '<leader>d', builtin.diagnostics, {})
-
+-- Open and close netrw with leader e
 vim.keymap.set("n", "<leader>e", function() if (vim.api.nvim_buf_get_option(0, "filetype")=="netrw") then vim.api.nvim_exec(":bprev", false) else vim.api.nvim_exec(":Explore", false) end end, {})
-
-require('hop')
-vim.keymap.set('n', '<leader>h', ":HopWord<CR>", { silent = true })
 
 require('Comment').setup()
 
@@ -164,7 +100,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
       vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, opts)
-      vim.keymap.set('n', '<leader>u', builtin.lsp_references, opts)
       vim.keymap.set({ 'n', 'v' }, '<leader>c', vim.lsp.buf.code_action, opts)
    end,
 })
