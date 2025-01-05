@@ -1,6 +1,7 @@
 vim.g.mapleader = ";"
 vim.cmd("set clipboard=unnamedplus")
 vim.cmd("set nowrap")
+vim.cmd("set relativenumber")
 vim.cmd("set noswapfile")
 vim.cmd("set backupdir=~/.config/nvim/backup/")
 vim.opt.ignorecase = true
