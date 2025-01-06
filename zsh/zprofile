@@ -31,7 +31,7 @@ alias golib='~/go/pkg/mod/github.com'
 
 alias links='vim ~/links.md'
 
-# case insensitive grepping
-alias g='rg -i'
+# case insensitive grepping with line numbers to jump to in nvim buffer with gF
+alias g='rg -in'
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
