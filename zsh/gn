@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Here we grep the first argument with ripgrep and pipe that into nvim.
+if [ -z "$1" ]; then
+    echo "Error: Search term required"
+    echo "Usage: gn <search term>"
+    exit 1
+fi
+rg -in "$*" | nvim

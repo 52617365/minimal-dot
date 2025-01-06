@@ -32,6 +32,10 @@ alias golib='~/go/pkg/mod/github.com'
 alias links='vim ~/links.md'
 
 # case insensitive grepping with line numbers to jump to in nvim buffer with gF
+# there is a version of this that pipes the output into neovim for ease of use
+# in the shell script named gn (grep - neovim)
 alias g='rg -in'
+
+alias gn='/Users/rase/.config/dotfiles/zsh/gn'
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
