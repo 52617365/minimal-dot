@@ -1,4 +1,5 @@
 
+# To use any of these aliases with neovim command mode, you have to create a ~/.zshenv file instead of .zshrc.
 
 export PATH="$PATH:/Users/rase/Library/Application Support/JetBrains/Toolbox/scripts"
 
