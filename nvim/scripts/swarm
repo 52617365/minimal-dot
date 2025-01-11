@@ -1,0 +1,6 @@
+swarn=`cat <<EOF
+  slog.Warn("")
+EOF
+`
+
+echo $swarn

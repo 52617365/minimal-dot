@@ -1,0 +1,6 @@
+sloginfo=`cat <<EOF
+  slog.Info("")
+EOF
+`
+
+echo $sloginfo

@@ -1,0 +1,6 @@
+serr=`cat <<EOF
+  slog.Error("")
+EOF
+`
+
+echo $serr
