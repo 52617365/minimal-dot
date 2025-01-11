@@ -105,4 +105,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
    end,
 })
 
+vim.keymap.set('n', '<leader>b', function()
+    vim.cmd('write')  -- Save current file
+    vim.cmd('!make build')  -- Run make build
+end, { noremap = true, desc = 'Run make build' })
 
