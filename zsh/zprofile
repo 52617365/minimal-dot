@@ -45,4 +45,7 @@ alias g='rg -in'
 
 alias gn='/Users/rase/.config/dotfiles/zsh/gn'
 
+alias b='make build'
+alias r='make run'
+
 eval "$(/opt/homebrew/bin/brew shellenv)"
