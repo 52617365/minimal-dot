@@ -9,4 +9,6 @@ ln -s tmux/tmux.conf ~/.tmux.conf
 ln -s zsh/zprofile ~/.zprofile
 ln -s zsh/zprofile ~/.zshenv
 ln -s zsh/zshrc ~/.zshrc
-ln -s jetbrains/ideavimrc ~/.ideavimrc
+
+# This does not work and it has to be copied, did not work with symlink.
+#ln -s jetbrains/ideavimrc ~/.ideavimrc
