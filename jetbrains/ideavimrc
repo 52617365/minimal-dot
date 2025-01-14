@@ -1,0 +1,39 @@
+"Options
+let mapleader = ";"
+
+set relativenumber
+
+"Plugins
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'terryma/vim-multiple-cursors'
+
+set easymotion
+
+" Split window horizontally
+nmap <leader>s :action SplitVertically<cr>
+
+" Fuzzy finder and file navigation
+nmap <leader>c :action GotoClass<cr>
+nmap <leader>f :action GotoFile<cr>
+nmap <leader>g :action FindInPath<cr>
+nmap <leader>w :action Switcher<cr>
+nmap <leader>u :action FindUsages<cr>
+nmap <leader>d :action QuickImplementations<cr>
+
+" Refactorings
+vmap <leader>e :action ExtractMethod<cr>
+nmap <leader>r :action RenameElement<cr>
+" Remap multiple-cursors shortcuts to match terryma/vim-multiple-cursors
+
+nmap <C-n> <Plug>NextWholeOccurrence
+xmap <C-n> <Plug>NextWholeOccurrence
+
+nmap <C-q> <Plug>SkipOccurrence
+xmap <C-q> <Plug>SkipOccurrence
+
+set clipboard+=unnamed
+
+set ideajoin
+set ignorecase

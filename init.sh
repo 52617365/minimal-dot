@@ -9,3 +9,4 @@ ln -s tmux/tmux.conf ~/.tmux.conf
 ln -s zsh/zprofile ~/.zprofile
 ln -s zsh/zprofile ~/.zshenv
 ln -s zsh/zshrc ~/.zshrc
+ln -s jetbrains/ideavimrc ~/.ideavimrc
