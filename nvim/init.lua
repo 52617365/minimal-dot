@@ -26,6 +26,7 @@ plugins = {
   {"numToStr/Comment.nvim"},
   {"neovim/nvim-lspconfig"},
   {"EdenEast/nightfox.nvim"},
+  {"github/copilot.vim"},
 }
 
 vim.api.nvim_create_autocmd("BufWritePre", {
@@ -69,10 +70,6 @@ require("lazy").setup(plugins)
 vim.keymap.set("n", "<leader>e", function() if (vim.api.nvim_buf_get_option(0, "filetype")=="netrw") then vim.api.nvim_exec(":bprev", false) else vim.api.nvim_exec(":Explore", false) end end, {})
 
 require('Comment').setup()
-
-local on_attach = function(client)
-    require'completion'.on_attach(client)
-end
 
 local lspconfig = require("lspconfig")
 lspconfig.lua_ls.setup {}
