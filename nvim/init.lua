@@ -27,7 +27,12 @@ plugins = {
   {"neovim/nvim-lspconfig"},
   {"EdenEast/nightfox.nvim"},
   {"github/copilot.vim"},
+  {"ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
 }
+
 
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
@@ -107,6 +112,11 @@ vim.keymap.set('n', '<leader>b', function()
     vim.cmd('!make build')  -- Run make build
 end, { noremap = true, desc = 'Run make build' })
 
+vim.keymap.set('n', '<leader>t', function()
+    vim.cmd('write')  -- Save current file
+    vim.cmd('!make test')  -- Run make build
+end, { noremap = true, desc = 'Run make test' })
+
 -- highlighting yank
 vim.api.nvim_create_autocmd('TextYankPost', {
   group = vim.api.nvim_create_augroup('highlight_yank', {}),
@@ -116,3 +126,18 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank { higroup = 'IncSearch', timeout = 200 }
   end,
 })
+
+local harpoon = require("harpoon")
+
+-- REQUIRED
+harpoon:setup()
+-- REQUIRED
+
+vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+vim.keymap.set("n", "<leader>m", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
+vim.keymap.set("n", "<leader>1", function() harpoon:list():select(1) end)
+vim.keymap.set("n", "<leader>2", function() harpoon:list():select(2) end)
+vim.keymap.set("n", "<leader>3", function() harpoon:list():select(3) end)
+vim.keymap.set("n", "<leader>4", function() harpoon:list():select(4) end)
+
