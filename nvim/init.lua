@@ -36,7 +36,7 @@ plugins = {
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
   callback = function()
-    local params = vim.lsp.util.make_range_params()
+    local params = vim.lsp.util.make_range_params(0, "utf-8")
     params.context = {only = {"source.organizeImports"}}
     -- buf_request_sync defaults to a 1000ms timeout. Depending on your
     -- machine and codebase, you may want longer. Add an additional
@@ -91,6 +91,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(ev)
       local opts = {buffer = ev.buf}
 
+      vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
       vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
       vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, opts)
