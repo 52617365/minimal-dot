@@ -26,7 +26,6 @@ plugins = {
   {"numToStr/Comment.nvim"},
   {"neovim/nvim-lspconfig"},
   {"EdenEast/nightfox.nvim"},
-  {"github/copilot.vim"},
   {"ThePrimeagen/harpoon",
     branch = "harpoon2",
     dependencies = { "nvim-lua/plenary.nvim" },
@@ -58,17 +57,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 --
 
--- Getting rid of the fucking annoying symbols in the line number space with diagnostics.
--- https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#change-prefixcharacter-preceding-the-diagnostics-virtual-text
-for _, diag in ipairs({ "Error", "Warn", "Info", "Hint" }) do
-    vim.fn.sign_define("DiagnosticSign" .. diag, {
-        text = "",
-        texthl = "DiagnosticSign" .. diag,
-        linehl = "",
-        numhl = "DiagnosticSign" .. diag,
-    })
-end
-
 require("lazy").setup(plugins)
 
 -- Open and close netrw with leader e
@@ -95,6 +83,9 @@ lspconfig.gopls.setup({
 
 vim.cmd("colorscheme carbonfox")
 
+-- distraction off
+vim.cmd("syntax off")
+
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
     callback = function(ev)
@@ -105,6 +96,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, opts)
       vim.keymap.set({ 'n', 'v' }, '<leader>c', vim.lsp.buf.code_action, opts)
    end,
+})
+-- rid of annoying ass fkn error icons
+vim.diagnostic.config({
+  signs = false
 })
 
 vim.keymap.set('n', '<leader>b', function()
