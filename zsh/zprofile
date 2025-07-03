@@ -24,6 +24,8 @@ alias dot='cd /Users/rase/.config/dotfiles'
 
 alias todo='/Users/rase/.config/dotfiles/zsh/todo.sh'
 
+alias ide='/Users/rase/.config/dotfiles/zsh/ide.sh'
+
 alias view='nvim -R'
 alias v='nvim -R'
 
@@ -34,12 +36,6 @@ alias golib='~/go/pkg/mod/github.com'
 alias links='vim ~/links.md'
 
 alias tp="docker run --cap-add=NET_ADMIN -ti --rm -v $(pwd):/apps -w /apps alpine/ansible ansible-playbook"
-
-# Alias to use claude 3.5 sonnet from the cli
-# https://github.com/simonw/llm
-# and
-# https://github.com/simonw/llm-claude-3
-alias ai='llm -m claude-3.7-sonnet'
 
 # case insensitive grepping with line numbers to jump to in nvim buffer with gF
 # there is a version of this that pipes the output into neovim for ease of use
@@ -52,3 +48,6 @@ alias b='make build'
 alias r='make run'
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Created by `pipx` on 2025-06-30 14:18:35
+export PATH="$PATH:/Users/rase/.local/bin"
