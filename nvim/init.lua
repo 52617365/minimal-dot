@@ -69,6 +69,7 @@ lspconfig.lua_ls.setup {}
 lspconfig.pyright.setup {}
 lspconfig.gopls.setup {}
 lspconfig.ansiblels.setup {}
+lspconfig.ts_ls.setup {}
 lspconfig.gopls.setup({
   settings = {
     gopls = {

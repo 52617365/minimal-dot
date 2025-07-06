@@ -105,6 +105,7 @@ source $ZSH/oh-my-zsh.sh
 #
 
 alias c="/Users/rase/.claude/local/claude"
+alias claude="/Users/rase/.claude/local/claude"
 
 # Created by `pipx` on 2025-06-30 14:18:35
 export PATH="$PATH:/Users/rase/.local/bin"
