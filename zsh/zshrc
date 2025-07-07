@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-#plugins=(git)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,3 +109,8 @@ alias claude="/Users/rase/.claude/local/claude"
 
 # Created by `pipx` on 2025-06-30 14:18:35
 export PATH="$PATH:/Users/rase/.local/bin"
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/rase/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions

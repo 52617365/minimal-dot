@@ -10,5 +10,8 @@ ln -s zsh/zprofile ~/.zprofile
 ln -s zsh/zprofile ~/.zshenv
 ln -s zsh/zshrc ~/.zshrc
 
+# Install zsh plugins
+./zsh/install-plugins.sh
+
 # This does not work and it has to be copied, did not work with symlink.
 #ln -s jetbrains/ideavimrc ~/.ideavimrc
