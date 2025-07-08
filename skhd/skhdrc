@@ -1,0 +1,5 @@
+# Open iTerm2 with semicolon + t
+cmd - z : open -a iTerm
+
+# Open default browser with semicolon + b
+cmd - x : open -a "Google Chrome"

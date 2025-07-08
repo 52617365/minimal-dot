@@ -3,6 +3,9 @@ mkdir -p ~/.config/nvim
 # Symlinkki kyseiseen hakemistoon koska nvim hakee sieltä
 ln -s nvim/init.lua ~/.config/nvim/init.lua
 
+# Symlinkki skhdrc
+ln -s skhd/skhdrc ~/.skhdrc
+
 # Symlinkki tmux konffiin
 ln -s tmux/tmux.conf ~/.tmux.conf
 
