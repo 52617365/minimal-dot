@@ -6,6 +6,7 @@ export PATH="$PATH:/Users/rase/Library/Application Support/JetBrains/Toolbox/scr
 export PATH="$PATH:/Users/rase/go/bin"
 
 export PATH="$PATH:/Users/rase/.config/dotfiles/nvim/scripts"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
 alias vim='nvim'
 alias ac='source /Users/rase/.zprofile; source /Users/rase/.zshrc; tmux source ~/.tmux.conf'
