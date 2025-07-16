@@ -71,7 +71,7 @@ check:
 	deadcode .
 	staticcheck ./...
 	golangci-lint fmt
-	golangci-lint run
+	golangci-lint run --fix
 
 	# Testing
 	go test -race ./...
