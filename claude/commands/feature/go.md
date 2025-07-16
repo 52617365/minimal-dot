@@ -46,7 +46,7 @@ Think hard.
         - All //nolint directives should have a comment describing why the //nolint directive is being used in that specific place and why it's ok.
    f. If a type, variable or function is not being used by other packages, it should not be exported. They should always be unexported by default.
    g. Take into consideration the following Go tools when making changes to Go files:
-        - If you need to replace x with y in a Go project, you should use the following command to do so: `gofmt -r 'original_string => new_string`. Example: gofmt -r 'bytes.Compare(a, b) == 0 -> bytes.Equal(a, b)'`
+        - If you need to replace x with y in a Go project, you should use the following command to do so: `gofmt -r -w 'original_string => new_string`. Example: gofmt -r 'bytes.Compare(a, b) == 0 -> bytes.Equal(a, b)'`
         - When you make changes to source code, always run the `go fmt` tool to format the source code.
     
 4. Useful commands:
@@ -58,7 +58,7 @@ Think hard.
    f. `go test -run TestMyFunction ./...` runs one Go test
    g. `make doctor` should be used if present. It runs tests, linters and formatters.
    e. `gofmt` formats files and this should be used.
-   e. `gofmt -r 'original_string => new_string` replaces occurences of 'original_string' with 'new_string' in all Go files. Always use this when making changes to source code with the exception of local variables.
+   e. `gofmt -r -w 'original_string => new_string` replaces occurences of 'original_string' with 'new_string' in all Go files. Always use this when making changes to source code with the exception of local variables.
 
 Present your output in the following format:
 <planning_phase>
