@@ -47,8 +47,7 @@ Think hard.
         - Always prefer very specific //nolint directives. For example, //nolint:forbidigo is better than //nolint.
         - All //nolint directives should have a comment describing why the //nolint directive is being used in that specific place and why it's ok.
    v. If a type, variable or function is not being used by other packages, it should not be exported. They should always be unexported by default.
-    
-4. Useful commands:
+    4. Useful commands:
    a. `brew install golangci-lint` installs Go linter
    b. `golangci-lint run` runs Go linter
    c. `golangci-lint fmt` runs Go formatter
@@ -58,6 +57,68 @@ Think hard.
    g. `make doctor` should be used if present. It runs tests, linters and formatters.
    h. `gofmt` formats files and this should be used.
    i. `gofmt -r -w 'original_string => new_string' .` replaces occurences of 'original_string' with 'new_string' in all Go files. Always use this when making changes to source code with the exception of local variables.
+
+4. What a gear test looks like:
+Here's an example test in Go that I consider good. The checks should be as explicit as possible.
+```go
+func TestGetUserIPRoutes(t *testing.T) {
+	t.Parallel()
+
+	tests := []struct {
+		name          string
+		ipRuleOutput  string
+		ipRouteOutput string
+		expected      [][]route.IPRoute
+	}{
+		{
+			name: "Basic default and local routes",
+			ipRuleOutput: `32766:	from all lookup main`,
+			ipRouteOutput: `default via 192.168.1.1 dev eth0 src 192.168.1.100
+192.168.1.0/24 dev eth0 scope link`,
+			expected: [][]route.IPRoute{
+				{
+					{
+						Cidr: "0.0.0.0/0",
+						Dev:  "eth0",
+						Details: route.IPRouteDetails{
+							Gw:    "192.168.1.1",
+							SrcIP: "192.168.1.100",
+							Table: "main",
+						},
+					},
+					{
+						Cidr: "192.168.1.0/24",
+						Dev:  "eth0",
+						Details: route.IPRouteDetails{
+							Table: "main",
+						},
+					},
+				},
+			},
+		},
+	}
+
+	for _, tc := range tests {
+		t.Run(tc.name, func(t *testing.T) {
+			t.Parallel()
+
+			result := route.GetUserIPRoutes(tc.ipRuleOutput, tc.ipRouteOutput)
+
+			// Assume slices are sorted here for stable comparison.
+			// sortRouteTables(tc.expected)
+			// sortRouteTables(result)
+
+			require.Len(t, result, len(tc.expected))
+
+			for i, expectedTable := range tc.expected {
+				actualTable := result[i]
+				require.Len(t, actualTable, len(expectedTable))
+				assert.Equal(t, expectedTable, actualTable)
+			}
+		})
+	}
+}
+```
 
 Present your output in the following format:
 <planning_phase>
@@ -69,5 +130,6 @@ Present your output in the following format:
 </implementation_phase>
 
 Remember to ask for user feedback and be ready to iterate on both the plan and the implementation based on their input.
+
 
 Here's the feature I want you to implement, good luck:
