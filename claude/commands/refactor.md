@@ -42,6 +42,7 @@ When refactoring a file:
 3. **Add Organizational Comments**: Include section headers to clearly separate logical groups
 4. **Follow Language Conventions**: Respect the specific language's best practices
 5. **Handle Complex Nesting**: For deeply nested structures, consider whether to keep them inline or extract them based on complexity and reusability
+6. **Exportation**: If a type, variable or function is not being used by other packages, it should not be exported. Everything should be unexported by default.
 
 ## Example Transformation
 
