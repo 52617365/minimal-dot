@@ -10,6 +10,7 @@ A Go project should contain the following things:
     - go install golang.org/x/tools/cmd/deadcode@latest
     - go install honnef.co/go/tools/cmd/staticcheck@latest
     - go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+    - brew install entr
 
 ## Example Makefile file:
 A Makefile can contain as many commands as possible but these four should always be present:
