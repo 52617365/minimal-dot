@@ -168,6 +168,6 @@ When refactoring, provide:
 2. A brief explanation of the changes made
 3. Confirmation that functionality is preserved
 4. Any recommendations for further improvements
-5. If you need to replace x with y in a Go project, you should use the following command to do so: `gofmt -r 'original_string => new_string`. Example: gofmt -r 'bytes.Compare(a, b) == 0 -> bytes.Equal(a, b)'`
+5. If you need to replace x with y in a Go project, you should use the following command to do so: `gofmt -r -w 'original_string => new_string .` Example: gofmt -r -w 'bytes.Compare(a, b) == 0 -> bytes.Equal(a, b)' .`
 
 Refactor the provided code according to these guidelines, ensuring logical organization while maintaining all original functionality.

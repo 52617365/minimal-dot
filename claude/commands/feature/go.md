@@ -13,9 +13,10 @@ Think hard.
    b. State that the tests should be run and confirmed to fail.
    c. Wait until the user accepts the tests you just created and after run git commit to commit the new tests.
    d. Write code that passes the tests, `golangci-lint fmt` and `golangci-lint run` without modifying the tests themselves.
-   e. Start iterating: write code, run `gofmt -w .` to format files, run tests, `golangci-lint fmt`, `golangci-lint run` and adjust code, run tests, `golangci-lint fmt`, `golangci-lint run` again until everything passes. If the project contains a Makefile, run `make doctor` instead.
-   f. Wait until the user says implementation is satisfactory.
-   g. When user accepts the changes, commit the changes using `git`. You should do this yourself instead of making the user do it. Never include "Claude Code" specific banners in the `git commit` messages.
+   e. Start iterating: write code and inbetween every modification, run the `make check` command to run all appropriate checks and tests on files until your feature is complete. The checks done in `make check` should all pass and you should rigorously follow this fact.
+   f. In the end once you think your implementation is ready, run the `make doctor` command to do a final testing on the implementation
+   g. Wait until the user says implementation is satisfactory.
+   h. When user accepts the changes, commit the changes using `git`. You should do this yourself instead of making the user do it. Never include "Claude Code" specific banners in the `git commit` messages.
 
 3. Implementation details:
    a. Use the `testing` package and `stretchr/testify` for tests
@@ -41,13 +42,11 @@ Think hard.
    s. Always format Go files using the `golangci-lint fmt` command.
    t. Always lint Go files using the `golangci-lint run` command.
    u. When fixing linting errors returned by `golangci-lint run`, the following things should be considered:
+        - Make sure `make check` is executed before you start fixing the problems.
         - Never suppress linting errors with //nolint directives. If you can't find a solution to a linting problem, ask the user if using //nolint is ok.
         - Always prefer very specific //nolint directives. For example, //nolint:forbidigo is better than //nolint.
         - All //nolint directives should have a comment describing why the //nolint directive is being used in that specific place and why it's ok.
    v. If a type, variable or function is not being used by other packages, it should not be exported. They should always be unexported by default.
-   w. Take into consideration the following Go tools when making changes to Go files:
-        - If you need to replace x with y in a Go project, you should use the following command to do so: `gofmt -r -w 'original_string => new_string`. Example: gofmt -r 'bytes.Compare(a, b) == 0 -> bytes.Equal(a, b)'`
-        - When you make changes to source code, always run the `go fmt` tool to format the source code.
     
 4. Useful commands:
    a. `brew install golangci-lint` installs Go linter
