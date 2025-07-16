@@ -33,7 +33,8 @@ Think hard.
    l. No premature optimization
    m. Benchmark before claiming something is faster
    n. Use pprof for real bottlenecks
-   o. Always write Godoc comments on exported symbols
+   o. Always write Godoc comments on exported symbols. Also when you reference types or functions in the comments, reference them with [package.type] to also add a reference for lsps. For example: [errors.ErrInvalidRouteFormat].
+
    p. Code is complete when all tests, formatters and linters pass with zero issues. Godoc on all exported symbols, replaced code is deleted
    q. Use meaningful names on functions and variables
        - Example of good names: userID, getUserId()
@@ -57,6 +58,7 @@ Think hard.
    g. `make doctor` should be used if present. It runs tests, linters and formatters.
    h. `gofmt` formats files and this should be used.
    i. `gofmt -r -w 'original_string => new_string' .` replaces occurences of 'original_string' with 'new_string' in all Go files. Always use this when making changes to source code with the exception of local variables.
+   j. When you add 
 
 4. What a gear test looks like:
 Here's an example test in Go that I consider good. The checks should be as explicit as possible.
