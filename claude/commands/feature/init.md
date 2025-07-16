@@ -127,6 +127,7 @@ linters:
     - gocognit
     - gocyclo
     - nestif
+    - wsl_v5
 
 formatters:
   settings:
