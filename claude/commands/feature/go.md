@@ -14,7 +14,8 @@ Think hard.
    c. Wait until the user accepts the tests you just created and after run git commit to commit the new tests.
    d. Write code that passes the tests, `golangci-lint fmt` and `golangci-lint run` without modifying the tests themselves.
    e. Start iterating: write code, run tests, `golangci-lint fmt`, `golangci-lint run` and adjust code, run tests, `golangci-lint fmt`, `golangci-lint run` again until everything passes. If the project contains a Makefile, run `make doctor` instead.
-   f. Wait until the user says implementation is satisfactory and after run git commit to commit the changes.
+   f. Wait until the user says implementation is satisfactory.
+   g. When user accepts the changes, commit the changes using `git`. You should do this yourself instead of making the user do it. Never include "Claude Code" specific banners in the `git commit` messages.
 
 3. Implementation details:
    a. Use the `testing` package and `stretchr/testify` for tests
