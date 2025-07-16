@@ -38,9 +38,7 @@ check:
 	golangci-lint fmt
 	golangci-lint run
 
-	# Testing
-	go test -race ./...
-```
+	# Testing go test -race ./... ```
 
 ### Example run command:
 ```
@@ -128,6 +126,7 @@ linters:
     - gocyclo
     - nestif
     - wsl_v5
+    - unparam
 
 formatters:
   settings:
