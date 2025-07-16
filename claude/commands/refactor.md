@@ -15,8 +15,7 @@ You are tasked with refactoring programming files to organize code elements in a
 1. **Imports/Includes** - External dependencies first
 2. **Constants/Global Variables** - Module-level constants
 3. **Type Definitions** - Enums, type aliases, interfaces
-4. **Data Structures** - Classes, structs, records
-5. **Functions/Methods** - Utility functions, then main logic
+4. **Data Structures** - Classes, structs, records 5. **Functions/Methods** - Utility functions, then main logic
 6. **Main/Entry Point** - Program entry point (if applicable)
 
 ### Nested Structure Rules:
@@ -169,5 +168,6 @@ When refactoring, provide:
 2. A brief explanation of the changes made
 3. Confirmation that functionality is preserved
 4. Any recommendations for further improvements
+5. If you need to replace x with y in a Go project, you should use the following command to do so: `gofmt -r 'original_string => new_string`. Example: gofmt -r 'bytes.Compare(a, b) == 0 -> bytes.Equal(a, b)'`
 
 Refactor the provided code according to these guidelines, ensuring logical organization while maintaining all original functionality.

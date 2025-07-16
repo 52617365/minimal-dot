@@ -45,6 +45,7 @@ Think hard.
       - Always prefer very specific //nolint directives. For example, //nolint:forbidigo is better than //nolint.
       - All //nolint directives should have a comment describing why the //nolint directive is being used in that specific place and why it's ok.
    f. If a type, variable or function is not being used by other packages, it should not be exported. They should always be unexported by default.
+   g. If you need to replace x with y in a Go project, you should use the following command to do so: `gofmt -r 'original_string => new_string`. Example: gofmt -r 'bytes.Compare(a, b) == 0 -> bytes.Equal(a, b)'`
     
 4. Useful commands:
    a. `brew install golangci-lint` installs Go linter
