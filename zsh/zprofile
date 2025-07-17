@@ -27,7 +27,7 @@ alias todo='/Users/rase/.config/dotfiles/zsh/todo.sh'
 
 alias ide='/Users/rase/.config/dotfiles/zsh/ide.sh'
 
-alias commit='git commit -m "$(git diff --cached | claude -p "Generate a commit message for these changes:")"'
+alias commit='git commit -m "$(git diff --cached | claude -p "Generate a commit message for these changes, your response is being used in a git commit, please take that into consideration:")"'
 
 alias view='nvim -R'
 alias v='nvim -R'
