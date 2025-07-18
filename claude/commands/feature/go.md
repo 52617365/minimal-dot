@@ -74,6 +74,7 @@ When modifying multiple files simultaneously:
 - Use pprof for real bottlenecks
 - Always write **Godoc comments** on exported symbols. Also when you reference types or functions in the comments, reference them with `[package.TypeName]` to also add a reference for lsps. For example: `[route.IPRoute]` or `[errors.ErrInvalidRouteFormat]`.
 - Prefer ranged for loops always. Avoid indexing into slices if you can use a ranged loop.
+- By default, when comparing structures in tests, use `assert.Equal` on the struct itself, no need to check for every struct member separately.
 
 ### Code Completion Criteria
 - Code is complete when all tests, formatters and linters pass with **zero issues**
