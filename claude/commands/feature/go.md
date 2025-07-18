@@ -73,6 +73,7 @@ When modifying multiple files simultaneously:
 - Benchmark before claiming something is faster
 - Use pprof for real bottlenecks
 - Always write **Godoc comments** on exported symbols. Also when you reference types or functions in the comments, reference them with `[package.TypeName]` to also add a reference for lsps. For example: `[route.IPRoute]` or `[errors.ErrInvalidRouteFormat]`.
+- Prefer ranged for loops always. Avoid indexing into slices if you can use a ranged loop.
 
 ### Code Completion Criteria
 - Code is complete when all tests, formatters and linters pass with **zero issues**
